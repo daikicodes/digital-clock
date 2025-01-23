@@ -9,7 +9,7 @@ function updateTime() {
     document.getElementById('seconds').textContent = seconds;
 
     // Update week days
-    const weekDays = ['SUN', 'MON', 'THU', 'WED', 'TUE', 'FRI', 'SAT'];
+    const weekDays = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
     const todayIndex = time.getDay();
     const today = weekDays[todayIndex];
     const weekday = document.querySelectorAll('.weekday');
