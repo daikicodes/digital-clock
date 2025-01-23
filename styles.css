@@ -1,0 +1,84 @@
+@font-face {
+    font-family: 'Digital-7';
+    src: url('./src/Digital7-rg1mL.ttf');
+}
+
+@font-face {
+    font-family: 'Digital-7-Mono';
+    src: url('./src/Digital7Mono-Yz9J4.ttf');
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Digital-7', monospace;
+    background-color: #0c0c0c;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+}
+
+.display {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-family: 'Digital-7-Mono', monospace;
+    font-weight: 100;
+    font-size: 20vw;
+}
+
+h1#placeholder {
+    position: relative;
+    z-index: 1;
+    color: #1b1b1b;
+}
+
+h1#display-time {
+    position: absolute;
+    z-index: 2;
+    color: #fff;
+    text-shadow: 0em 0em 0.025em rgba(255,255,255,255);
+}
+
+ul.week {
+    display: flex;
+    width: 100%;
+
+    justify-content: space-around;
+
+}
+
+.weekday {
+    list-style: none;
+    font-size: 5vw;
+    color: #1b1b1b;
+}
+
+.weekday.active {
+    color: #fff;
+    text-shadow: 0em 0em 0.08em rgba(255,255,255,255);
+}
+
+.colon {
+    font-family: 'Digital-7', monospace;
+}
+
