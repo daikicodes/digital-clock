@@ -1,3 +1,28 @@
+let wakeLock = null;
+
+async function requestWakeLock() {
+  try {
+    wakeLock = await navigator.wakeLock.request('screen');
+    console.log('Wake Lock requested.');
+
+    wakeLock.addEventListener('release', () => {
+      console.log('Wake Lock released.');
+      wakeLock = null;
+    });
+  } catch (err) {
+    console.error(`Error while requering Wake Lock: ${err}`);
+  }
+}
+
+async function releaseWakeLock() {
+  if (wakeLock) {
+    await wakeLock.release();
+    wakeLock = null;
+  }
+}
+
+
+
 function updateTime() {
     // Update time
     const time = new Date();
@@ -39,3 +64,9 @@ function updateTime() {
 
 updateTime();
 setInterval(updateTime, 1000);
+
+// activate Wake Lock when page is focused
+window.addEventListener('focus', requestWakeLock);
+
+// release Wake Lock when page loses focus
+window.addEventListener('blur', releaseWakeLock);
